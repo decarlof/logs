@@ -32,23 +32,7 @@ def warning(msg):
     logger.warning(warn_extra['color']+ msg + warn_extra['endColor'])
 
 
-def setup_logger(lfname):
-    logger = logging.getLogger('general')
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(module)s - %(message)s')
-
-    fhandler = logging.FileHandler(lfname)
-    fhandler.setFormatter(formatter)
-    logger.addHandler(fhandler)
-
-    chandler = logging.StreamHandler()
-    chandler.setFormatter(formatter)
-    chandler.setLevel(logging.DEBUG)
-    logger.addHandler(chandler)
-
-    return logger
-
-def setup_old_logger(lfname, stream_to_console=True):
+def setup_custom_logger(lfname, stream_to_console=True):
 
     logger = logging.getLogger('general')
     fHandler = logging.FileHandler(lfname)
