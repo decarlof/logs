@@ -23,9 +23,9 @@ lfname = 'test.txt'
 logger = log.setup_old_logger(lfname)
 # logger = log.setup_custom_logger(lfname)
 
-logger.info("  *** info main")
-logger.warning("  *** warning main")
-logger.error("  *** error main")
+log.info("  *** info main")
+log.warning("  *** warning main")
+log.error("  *** error main")
 
 module.submodule()
 

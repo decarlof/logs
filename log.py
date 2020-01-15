@@ -17,12 +17,15 @@ error_extra={'endColor': __ENDC, 'color': __RED}
 
 
 def info(msg):
+    logger = logging.getLogger('general')
     logger.info(msg, extra=info_extra)
 
 def error(msg):
-    logger.error(msg, extra=error_extra)
+   logger = logging.getLogger('general')
+   logger.error(msg, extra=error_extra)
 
 def warning(msg):
+    logger = logging.getLogger('general')
     logger.warning(msg, extra=warn_extra)
 
 
