@@ -26,24 +26,12 @@ def warning(msg):
     logger.warning(msg, extra=warn_extra)
 
 
-def setup_custom_logger(name):
-    formatter = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(module)s - %(message)s')
-
-    handler = logging.StreamHandler()
-    handler.setFormatter(formatter)
-
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)
-    logger.addHandler(handler)
-    return logger
-
-
-def setup_logger(name):
+def setup_logger(lfname):
     logger = logging.getLogger('general')
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(module)s - %(message)s')
 
-    fhandler = logging.FileHandler(name)
+    fhandler = logging.FileHandler(lfname)
     fhandler.setFormatter(formatter)
     logger.addHandler(fhandler)
 
@@ -54,10 +42,10 @@ def setup_logger(name):
 
     return logger
 
-def setup_old_logger(log_name, stream_to_console=True):
+def setup_old_logger(lfname, stream_to_console=True):
 
     logger = logging.getLogger('general')
-    fHandler = logging.FileHandler(log_name)
+    fHandler = logging.FileHandler(lfname)
     logger.setLevel(logging.DEBUG)
     # formatter = logging.Formatter("%(asctime)s %(color)s  %(message)s %(endColor)s")
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
