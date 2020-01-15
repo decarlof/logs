@@ -8,8 +8,6 @@ import time
 import shutil
 import pathlib
 from datetime import datetime
-import logging
-
 
 import log
 import module
