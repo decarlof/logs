@@ -18,15 +18,18 @@ error_extra={'endColor': __ENDC, 'color': __RED}
 
 def info(msg):
     logger = logging.getLogger('general')
-    logger.info(msg, extra=info_extra)
+    # logger.info(msg, extra=info_extra)
+    logger.info(info_extra['color']+ msg + info_extra['endColor'])
 
 def error(msg):
-   logger = logging.getLogger('general')
-   logger.error(msg, extra=error_extra)
+    logger = logging.getLogger('general')
+   # logger.error(msg, extra=error_extra)
+    logger.error(error_extra['color']+ msg + error_extra['endColor'])
 
 def warning(msg):
     logger = logging.getLogger('general')
-    logger.warning(msg, extra=warn_extra)
+    # logger.warning(msg, extra=warn_extra)
+    logger.warning(warn_extra['color']+ msg + warn_extra['endColor'])
 
 
 def setup_logger(lfname):
@@ -50,7 +53,12 @@ def setup_old_logger(lfname, stream_to_console=True):
     logger = logging.getLogger('general')
     fHandler = logging.FileHandler(lfname)
     logger.setLevel(logging.DEBUG)
-    # formatter = logging.Formatter("%(asctime)s %(color)s  %(message)s %(endColor)s")
+    # print(info_extra['color'])
+    # # print(message)
+    # print(info_extra['endColor'])
+    # formatter = ("%(asctime)s %(info_extra['color'])s  %(message)s %(info_extra['endColor'])s")
+    # print(formatter)
+    # formatter = logging.Formatter("%(asctime)s %(info_extra['color'])s  %(message)s %(info_extra['endColor'])s")
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     fHandler.setFormatter(formatter)
     logger.addHandler(fHandler)

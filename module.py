@@ -7,12 +7,13 @@ import tomopy
 import dxchange
 import logging
 
+import log
 # logger = log.setup_logger(__name__)
 logger = logging.getLogger('general')
 # logger = logging.getLogger('test.txt')
 
 
 def submodule():
-    logger.info("  *** info module")
-    logger.warning("  *** warning module")
-    logger.error("  *** error module")
+    log.info("  *** info module")
+    log.warning("  *** warning module")
+    log.error("  *** error module")
