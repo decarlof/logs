@@ -22,7 +22,6 @@ import module
 # lfname = os.path.join(logs_home, 'tomopy_' + datetime.strftime(datetime.now(), "%Y-%m-%d_%H_%M_%S") + '.log')
 
 lfname = 'test.txt'
-logger = logging.getLogger('general')
 logger = log.setup_old_logger(lfname)
 # logger = log.setup_custom_logger(lfname)
 
