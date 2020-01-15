@@ -5,7 +5,6 @@ import pathlib
 import numpy as np
 import tomopy
 import dxchange
-
 import logging
 
 # logger = log.setup_logger(__name__)
