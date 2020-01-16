@@ -2,7 +2,7 @@ import logging
 
 import log
 
-logger = logging.getLogger('general')
+logger = logging.getLogger(__name__)
 
 
 def submodule():
