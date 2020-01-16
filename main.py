@@ -12,7 +12,7 @@ logs_home = os.path.join(str(pathlib.Path.home()), 'logs')
 # make sure logs directory exists
 if not os.path.exists(logs_home):
     os.makedirs(logs_home)
-lfname = os.path.join(logs_home, 'tomopy_' + datetime.strftime(datetime.now(), "%Y-%m-%d_%H_%M_%S") + '.log')
+lfname = os.path.join(logs_home, 'test_' + datetime.strftime(datetime.now(), "%Y-%m-%d_%H_%M_%S") + '.log')
 
 logger = log.setup_custom_logger(lfname)
 
