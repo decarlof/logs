@@ -1,10 +1,9 @@
-import logging
 
 import log
+logger = log.logger
 
-# logger = logging.getLogger(__name__)
 
 def submodule():
-    log.info("  *** info module")
-    log.warning("  *** warning module")
-    log.error("  *** error module")
+    logger.info("  *** info module")
+    logger.warning("  *** warning module")
+    logger.error("  *** error module")

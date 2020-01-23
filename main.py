@@ -14,11 +14,12 @@ if not os.path.exists(logs_home):
     os.makedirs(logs_home)
 lfname = os.path.join(logs_home, 'test_' + datetime.strftime(datetime.now(), "%Y-%m-%d_%H_%M_%S") + '.log')
 
-logger = log.setup_custom_logger(lfname)
+log.setup_custom_logger(lfname)
+logger = log.logger
 
-log.info("  *** info main")
-log.warning("  *** warning main")
-log.error("  *** error main")
+logger.info("  *** info main")
+logger.warning("  *** warning main")
+logger.error("  *** error main")
 
 module.submodule()
 
