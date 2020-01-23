@@ -9,13 +9,13 @@ logger = logging.getLogger(__name__)
 def setup_custom_logger(lfname, stream_to_console=True):
     fHandler = logging.FileHandler(lfname)
     logger.setLevel(logging.DEBUG)
-    #formatter = logging.Formatter("%(asctime)s %(info_extra['color'])s  %(message)s %(info_extra['endColor'])s")
-    formatter = ColoredFormatter("%(asctime)s  %(levelname)s  %(message)s")
-    fHandler.setFormatter(formatter)
+    fformatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+    fHandler.setFormatter(fformatter)
     logger.addHandler(fHandler)
     if stream_to_console:
         ch = logging.StreamHandler()
-        ch.setFormatter(formatter)
+        cformatter = ColoredFormatter("%(asctime)s  %(levelname)s  %(message)s")
+        ch.setFormatter(cformatter)
         ch.setLevel(logging.DEBUG)
         logger.addHandler(ch)
 
